@@ -1,0 +1,193 @@
+@font-face {
+    font-family: "CommitMono Nerd Font";
+    src: url(../fonts/CommitMonoNerdFontMono-Regular.otf) format("opentype"),
+}
+
+:root {
+    color-scheme: dark;
+}
+
+::placeholder {
+    color: var(--prompt-color);
+}
+
+img {
+    transition:
+        transform 0.15s ease-in-out,
+        opacity 0.2s ease-in-out;
+}
+
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    background-color: var(--background-color);
+    background-image: url("../bgs/topography.svg");
+    overflow-x: clip;
+}
+
+html.loaded {
+    transition: background-color 0.2s ease-in-out;
+}
+
+body {
+    display: flex;
+    color: var(--text-color);
+    font-family: 'CommitMono Nerd Font', monospace;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: var(--text-color);
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-shadow: 0px 0px 3px var(--hover-color);
+    font-style: italic;
+}
+
+a:focus {
+    color: var(--hover-color);
+    text-shadow: 0px 0px 3px var(--hover-color);
+    font-style: italic;
+    outline: 0px;
+}
+
+#text,
+#image {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+#text.loaded,
+#image.loaded {
+    opacity: 1;
+}
+
+#text.loaded * {
+    transition: color 0.2s ease-in-out;
+}
+
+#carouselImage {
+    height: 550px;
+    aspect-ratio: 9 / 16;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 2px var(--accent-color);
+    object-fit: cover;
+}
+
+#image {
+    margin-right: 1em;
+}
+
+#carouselImage:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+
+    img,
+    #image {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#greeting {
+    color: var(--accent-color-2);
+    font-size: 2.5em;
+    font-weight: 900;
+    grid-column: 1/-1;
+    text-align: center;
+    display: grid;
+    padding-right: 0.1em;
+}
+
+#date {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--accent-color);
+    display: grid;
+    grid-column: 1/-1;
+    text-align: center;
+    margin: 1em 0;
+    padding-right: 0.5em;
+}
+
+#links {
+    display: grid;
+    padding-left: 1em;
+    grid-row-gap: 1em;
+    grid-column-gap: 4em;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 1em;
+    margin-left: -0.5em;
+}
+
+#image {
+    padding-right: 1em;
+}
+
+#search input {
+    font-family: 'CommitMono Nerd Font', monospace;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    outline: 2px dashed var(--accent-color);
+    margin-bottom: 1rem;
+    width: 28rem;
+    padding: 2%;
+}
+
+#search input:hover {
+    box-shadow: 0px 0px 10px 0px var(--accent-color);
+}
+
+#search input:focus {
+    box-shadow: 0px 0px 10px 0px var(--accent-color);
+}
+
+.ay {
+    background-color: transparent;
+}
+
+.ay .urls:nth-child(even) {
+    padding-left: 1.5em;
+}
+
+.header {
+    color: var(--accent-color);
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+.item select {
+    font-family: 'CommitMono Nerd Font', monospace;
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 50%;
+    border: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    position: fixed;
+    left: 50%;
+    bottom: -5px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.item select:focus {
+    outline: 2px dotted var(--accent-color);
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>~/startpage 💤</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./src/css/style.css" rel="stylesheet"/>
+  </head>
+  <body class="ay">
+    <div id="image" onclick="nextImage()" oncontextmenu="nextBg(); return false;">
+      <img id="carouselImage" src="./src/images/cover1.gif" />
+    </div>
+    <div id="text">
+      <div id="greeting">Welcome $HOME!</div>
+      <div id="date"></div>
+      <div class="container">
+        <div id="search">
+          <input id="input_search" type="text" placeholder="~$">
+        </div>
+      </div>
+      <div id="links">
+        <div class="urls">
+          <div class="header">~/general </div>
+          <ul>
+            <li><a href="https://google.com">Google</a></li>
+            <li><a href="https://x.com">Twitter</a></li>
+            <li><a href="https://youtube.com">Youtube</a></li>
+          </ul>
+        </div>
+        <div class="urls">
+          <div class="header">~/devel </div>
+          <ul>
+            <li>
+              <a href="https://github.com/titusse3?tab=repositories">GitHub</a>
+            </li>
+            <li><a href="https://sbox.game/news">s&box News</a></li>
+            <li><a href="https://renauxv.fr">Web site</a></li>
+          </ul>
+        </div>
+        <div class="urls">
+          <div class="header">~/school 󰑴</div>
+          <ul>
+            <li><a href="https://cas.univ-rouen.fr/login">Univ</a></li>
+            <li><a href="https://sagbot.com/edt2">Calendar</a></li>
+            <li><a href="https://singlelogin.re">Z-Library</a></li>
+          </ul>
+        </div>
+        <div class="urls">
+          <div class="header">~/reddit </div>
+          <ul>
+            <li><a href="https://reddit.com/r/unixporn/">r/unixporn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <select name="search" id="search_select" onchange="saveService()">
+        <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+        <option value="https://www.google.com/search?q=">Google</option>
+        <option value="https://www.startpage.com/do/search?q=SEARCH&segment=startpage.vivaldi">StartPage</option>
+        <option value="https://www.ecosia.org/search?tt=dccf112d&q=">Ecosia</option>
+        <option value="https://www.bing.com/search?FORM=INCOH2&PC=IFJ1&PTAG=ICO-c9d0fc87&q=">Bing</option>
+      </select>
+    </div>
+  </body>
+  <script async src="./src/js/date.js"></script>
+  <script async src="./src/js/search.js"></script>
+  <script async src="./src/js/search-services.js"></script>
+  <script async src="./src/js/theme.js" currentIndex="0"></script>
+</html>
